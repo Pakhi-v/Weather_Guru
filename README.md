@@ -1,2 +1,2 @@
 # GenPass
-The main purpose of this Project is to serve Passwords to user(Password Generator App).
+This repository contains a Team project assigned during course of Full Stack development.
