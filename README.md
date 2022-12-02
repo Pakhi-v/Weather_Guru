@@ -1,5 +1,5 @@
 # Weather Guru App
-This repository contains a Team project assigned during course of Full Stack development.
+This repository contains a Team project assigned during course of Full Stack development(FSD).
 
 
 # Software Requirements
