@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        body{
-            background-color: #f3f2ef;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            height: 100vh;
-            width: 100vw;
-        }
-        html,
-        body {
-            font-size: 62.5%;
-            height: 100%;
-        }
-        html{
-            background: #eee;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Quicksand", sans-serif;
+      }
+      body {
+        background-color: #f3f2ef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        width: 100vw;
+      }
+      html,
+      body {
+        font-size: 62.5%;
+        height: 100%;
+      }
+      html {
+        background: #eee;
+      }
 
-        .box{
-            width: 20vw;
-            height: 60vh;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
-            background: #a5bbdd;
-            position: relative;
-            overflow: hidden;
-            transform: translate3d(0,0,0);
-            min-width: 20rem;
-            min-height: 35rem;
-        }
-</style>
-</head>
-<body>
+      .box {
+        width: 20vw;
+        height: 60vh;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+        background: #a5bbdd;
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+        min-width: 20rem;
+        min-height: 35rem;
+      }
+    </style>
+  </head>
+  <body>
     <div class="box">
-        <div class="wave -one"></div>
-        <div class="wave -two"></div>
-        <div class="wave -three"></div>
+      <div class="wave -one"></div>
+      <div class="wave -two"></div>
+      <div class="wave -three"></div>
 
-        <div id="weathericon">
-            <i class="fas fa-sun" style="color: #feca57;"></i>
-        </div>
+      <div id="weathericon">
+        <i class="fas fa-sun" style="color: #feca57"></i>
+      </div>
 
-        <div class="info">
-            <h2 class="location"><i class="fas fa-street-view" style="color: #feca57;"></i>
-                {%city%},{%country%}
-            </h2>
-            <p id="date"> WED | OCT 26 | 10:49PM </p>
-            <h1 class="temp"> {%tempval%}&deg;C</h1>
-            <h3 class="tempmin_max "> {%tempmin%}&deg;C | {%tempmax%}&deg;C</h3>
-        </div>
+      <div class="info">
+        <h2 class="location">
+          <i class="fas fa-street-view" style="color: #feca57"></i>
+          {%city%},{%country%}
+        </h2>
+        <p id="date">WED | OCT 26 | 10:49PM</p>
+        <h1 class="temp">{%tempval%}&deg;C</h1>
+        <h3 class="tempmin_max">{%tempmin%}&deg;C | {%tempmax%}&deg;C</h3>
+      </div>
     </div>
-</body>
+    <script>
+      const curDate = document.getElementById("date");
+      let weathericon = document.getElementById("weathericon");
+
+      const tempStatus = "{%tempstatus%}";
+      if (tempStatus == "Sunny") {
+        weathericon.innerHTML =
+          '<i class="fas fa-sun" style="color: #feca57;"></i>';
+      } else if (tempStatus == "Clouds") {
+        weathericon.innerHTML =
+          '<i class="fas fa-cloud" style="color: #dfe4ea;"></i>';
+      } else if (tempStatus == "Rainy") {
+        weathericon.innerHTML =
+          '<i class="fas fa-rain" style="color: #a4b0be;"></i>';
+      } else {
+        weathericon.innerHTML =
+          '<i class="fas fa-cloud" style="color: #feca57;"></i>';
+      }
+    </script>
+  </body>
 </html>
