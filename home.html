@@ -83,6 +83,61 @@
         weathericon.innerHTML =
           '<i class="fas fa-cloud" style="color: #feca57;"></i>';
       }
+
+      const getcurrentDay = () => {
+        var weekday = new Array();
+        weekday[0] = "sunday";
+        weekday[1] = "monday";
+        weekday[2] = "tuesday";
+        weekday[3] = "wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "friday";
+        weekday[6] = "saturday";
+
+        let currentTime = new Date();
+        let day = weekday[currentTime.getDay()];
+        return day;
+      };
+      // getcurrentDay();
+
+      const getcurrentTime = () => {
+        var months = [
+          "Jan",
+          "Feb",
+          "March",
+          "Apr",
+          "May",
+          "June",
+          "July",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        var now = new Date();
+
+        var month = months[now.getMonth()]; // if using windows Os then +1 month (like var month = months[now.getMonth() +1]; )
+        var date = now.getDate();
+
+        let hours = now.getHours();
+        let mins = now.getMinutes();
+
+        let periods = "AM";
+
+        if (hours > 11) {
+          periods = "PM";
+          if (hours > 12) hours -= 12;
+        }
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+
+        return ` ${month} ${date} | ${hours}:${mins}${periods}`;
+
+        // console.log(month + "/" + date);
+      };
+      curDate.innerHTML = getcurrentDay() + " | " + getcurrentTime();
     </script>
   </body>
 </html>
