@@ -1,4 +1,4 @@
-# Weather Guru App
+# Weather Guru(Web Project)
 This repository contains a Team project assigned during course of Full Stack development(FSD).
 
 
