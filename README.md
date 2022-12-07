@@ -3,7 +3,8 @@ This repository contains a Team project assigned during course of Full Stack dev
 
 
 # Software Requirements
-* Programming Language: HTML, CSS, Javascript, Node JS
+* Programming Language: HTML, CSS, Javascript
+* Framework: Node js
 * IDE Tool: Visual Studio Code
 * Database: Null
 
